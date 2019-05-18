@@ -1,2 +1,12 @@
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
+
+.jumbotron {
+  text-align: center;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.row {
+  margin: 15px;
+}
