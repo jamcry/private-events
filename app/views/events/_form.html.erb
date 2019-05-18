@@ -1,0 +1,6 @@
+<%= form_for @event , url: new_event_path do |f| %>
+  <%= f.label :title %>
+  <%= f.text_area :title, class: 'form-control' %>
+  
+  <%= f.submit 'Create Event', class: 'btn btn-primary' %>
+<% end %>
