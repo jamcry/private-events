@@ -3,18 +3,5 @@
   <p>User Name: <%= @user.name %></p>
   <p>Email: <%= @user.email %></p>
   <p>Events:</p>
-  <% if @user.events.any? %>
-    <div class="list-group col-md-6 m-auto">
-      <% @user.events.each do |event| %>
-        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start m-1">
-        <div class="d-flex w-100 justify-content-between">
-          <h5 class="mb-1"><%= event.title %></h5>
-          <small><%= event.date.utc %></small>
-        </div>
-        <p class="mb-1">It will be at <%= event.location %></p>
-        <small>Click for details.</small>
-        </a>
-      <% end %>
-    </div>
-  <% end %>
+  <%= render 'created_events' %>
 </div>
