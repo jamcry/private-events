@@ -13,6 +13,7 @@
       <%= content_tag :div, msg, class: name %>
     <% end -%>
     <div class="container">
+      <%= render 'shared/login_status' %>
       <%= yield %>
     </div>
   </body>
