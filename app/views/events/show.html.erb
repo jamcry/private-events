@@ -1,3 +1,15 @@
 <div class="jumbotron">
-  <%= render @event %>
+  <div class="row col-md-9 m-auto">
+    <h1><%= @event.title %></h1>
+    <%= render @event %>  
+  </div>
+
+  <h2> Attendees </h2>
+  <% if @event.attendees.any? %>
+    <ul class="list-group col-md-6 m-auto">
+      <% @event.attendees.each do |attendee| %>
+        <li class="list-group-item"><%= link_to attendee.name, attendee %></li>
+      <% end %>
+    </ul>
+  <% end %>
 </div>
