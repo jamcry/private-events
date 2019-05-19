@@ -2,6 +2,8 @@
   <h1>User's Page</h1>
   <p>User Name: <%= @user.name %></p>
   <p>Email: <%= @user.email %></p>
-  <p>Events:</p>
-  <%= render 'created_events' %>
+  <h2>Events:</h2>
+  <%= render 'events', object: @user.created_events %>
+  <h2>Attended Events:</h2>
+  <%= render 'events', object: @user.attended_events %>
 </div>
