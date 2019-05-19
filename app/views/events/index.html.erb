@@ -1,6 +1,11 @@
 <div class="jumbotron">
-  <h1>All Events</h1>
+  <h1>Upcoming Events</h1>
   <div class="list-group col-md-6 m-auto">
-    <%= render @events, object: @events %>
+    <%= render @events.upcoming_events %>
+  </div>
+  
+  <h1>Past Events</h1>
+  <div class="list-group col-md-6 m-auto">
+    <%= render @events.previous_events %>
   </div>
 </div>
