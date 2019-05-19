@@ -1,20 +1,20 @@
 <div class="card event-card">
   <img class="card-img-top" src="https://picsum.photos/246/160?random=<%=event.id%>" alt="Event image">
   <div class="card-body">
-      <h5 class="card-title"><%= event.title %></h5>
-      <p class="card-text">
-        This is the description text of the event.
-        <%= event.title %> event will be located at <%= event.location %>.
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-      </p>
-      <span class="badge badge-pill badge-info"><%= event.attendees.count %> Attending</span>
-      <p class="card-text">Created by <%= event.creator.name %> </p>
+    <h5 class="card-title"><%= event.title %></h5>
+    <p class="card-text">
+      This is the description text of the event.
+      <%= event.title %> event will be located at <%= event.location %>.
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    </p>
+    <span class="badge badge-pill badge-info"><%= event.attendees.count %> Attending</span>
+    <p class="card-text">Created by <%= event.creator.name %> </p>
   </div>
   <div class="card-footer clearfix">
-      <small class="text-muted float-left"><%= event.date %></small>
-      <a class="btn btn-sm btn-primary float-right"
-         href="<%= event_path(event) %>">
-        Details
-      </a>
-    </div>
+    <small class="text-muted float-left"><%= event.date %></small>
+    <a class="btn btn-sm btn-primary float-right"
+       href="<%= event_path(event) %>">
+      Details
+    </a>
+  </div>
 </div>
