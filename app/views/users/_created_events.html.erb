@@ -1,6 +1,6 @@
-<% if @user.events.any? %>
+<% if @user.created_events.any? %>
     <div class="list-group col-md-6 m-auto">
-      <% @user.events.each do |event| %>
+      <% @user.created_events.each do |event| %>
         <a href="#" class="list-group-item list-group-item-action flex-column align-items-start m-1">
         <div class="d-flex w-100 justify-content-between">
           <h5 class="mb-1"><%= event.title %></h5>
@@ -11,4 +11,6 @@
         </a>
       <% end %>
     </div>
+  <% else %>
+    <p><em>None</em></p>
   <% end %>
