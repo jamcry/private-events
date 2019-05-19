@@ -1,8 +1,20 @@
-<a href="<%= event_path(event) %>" class="list-group-item list-group-item-action flex-column align-items-start m-1">
-  <div class="w-100 justify-content-between">
-    <h5 class="mb-1"><%= event.title %></h5>
-    <p class="mb-1">Date: <%= event.date %></p>
-    <p class="mb-1">Creator: <%= event.creator.name %></p>
-    <small>Click for details.</small>
+<div class="card event-card">
+  <img class="card-img-top" src="https://picsum.photos/246/160?random=<%=event.id%>" alt="Event image">
+  <div class="card-body">
+      <h5 class="card-title"><%= event.title %></h5>
+      <p class="card-text">
+        This is the description text of the event.
+        <%= event.title %> event will be located at <%= event.location %>.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      </p>
+      <span class="badge badge-pill badge-info"><%= event.attendees.count %> Attending</span>
+      <p class="card-text">Created by <%= event.creator.name %> </p>
   </div>
-</a>
+  <div class="card-footer clearfix">
+      <small class="text-muted float-left"><%= event.date %></small>
+      <a class="btn btn-sm btn-primary float-right"
+         href="<%= event_path(event) %>">
+        Details
+      </a>
+    </div>
+</div>

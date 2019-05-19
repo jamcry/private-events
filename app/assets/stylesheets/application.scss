@@ -15,6 +15,14 @@
   width: 75%;
   padding-top: 1.5rem;
   color: #777;
-  border-top: .05rem solid #e5e5e5;
+  border-top: 0.05rem solid #e5e5e5;
   margin: auto;
+}
+
+.event-card {
+  transition: transform 0.2s;
+}
+.event-card:hover {
+  transform: scale(1.01);
+  box-shadow: 0px 0.5px 10px rgb(190, 190, 190);
 }

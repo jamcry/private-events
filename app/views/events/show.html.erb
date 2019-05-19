@@ -1,16 +1,26 @@
-<div class="jumbotron">
-  <div class="row col-md-9 m-auto">
-    <h1><%= @event.title %></h1>
-    <%= render @event %>  
+<div class="jumbotron text-left">
+<div class="row">
+  <div class="col-md-9">
+    <h1><%= @event.title %></h2>
+    <h3 class="font-italic">by <%= @event.creator.name %></h3>
+    <p class="font-weight-bold mb-1">Description</p>
+    <p class="text-justify">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis voluptate aspernatur dolorum quia? Saepe quisquam possimus suscipit earum! Quis vero natus numquam deleniti quidem illum suscipit sapiente vel, perspiciatis culpa. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint ea libero, maxime reiciendis id, odit incidunt quod esse mollitia optio quo molestiae voluptatum, asperiores fugit nihil in consequatur! Recusandae, alias!</p>
+    <p class="font-weight-bold mb-1">Location</p>
+    <p><%= @event.location %></p>
+    <p class="font-weight-bold mb-1">Date</p>
+    <p><%= @event.date %></p>
   </div>
-
-  <h2> Date: <%= @event.date %></h2>
-  <h2> Attendees </h2>
-  <% if @event.attendees.any? %>
-    <ul class="list-group col-md-6 m-auto">
-      <% @event.attendees.each do |attendee| %>
-        <li class="list-group-item"><%= link_to attendee.name, attendee %></li>
+  <div class="col-md-3 border-left">
+    <p class="font-weight-bold mt-3 mb-1">Attendees</p>
+    <% if @event.attendees.any? %>
+      <ul>
+      <% @event.attendees.take(10).each do |e| %>
+        <li><%= e.name %></li>
       <% end %>
-    </ul>
-  <% end %>
+      </ul>
+    <% end %>
+    <a href="#" class="btn btn-primary btn-lg">Attend</a>
+
+  </div>
+  </div>
 </div>
