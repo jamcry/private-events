@@ -1,12 +1,26 @@
-<div class="jumbotron">
+<div class="jumbotron p-2 text-left">
   <div class="row">
-    <% 3.times do |n| %>
-      <div class="col-sm">
-        <%= image_tag "https://picsum.photos/200/300?random=#{n}", class: 'img-fluid' %>    
-      </div>
-    <% end %>
+    <div class="col-md-9">
+      <h1>Private Events</h1>
+      <p>Choose an event to attend, or event create one to invite people.</p>
+    </div>
+    <div class="col-md-3 m-auto border-left">
+      <% if !logged_in? %>
+        <a href="<%= signup_path %>" class="btn btn-primary btn-lg">
+          Signup
+        </a>
+        <a href="<%= login_path %>" class="btn btn-secondary btn-lg">
+          Login
+        </a>
+      <% else %>
+        Logged in, <%= link_to current_user.name, current_user %>
+      <% end %>
+    </div>
   </div>
-  <h1>Hello World!</h1>
-  <p>This is a temporary home page.</p>
-  <p>This app is <em>being</em> developed by <a href="https://github.com/jamcry" target="_blank">JamCry.</a></p>
+</div>
+
+  <h1>Upcoming Events</h1>
+  <div class="card-group">
+  <%= render Event.upcoming_events.take(3) %>
+  </div>
 </div>
