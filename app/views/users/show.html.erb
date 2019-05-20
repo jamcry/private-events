@@ -1,9 +1,20 @@
-<div class="jumbotron">
-  <h1>User's Page</h1>
-  <p>User Name: <%= @user.name %></p>
-  <p>Email: <%= @user.email %></p>
-  <h2>Events:</h2>
-  <%= render 'events', object: @user.created_events %>
-  <h2>Attended Events:</h2>
-  <%= render 'events', object: @user.attended_events %>
+<div class="jumbotron text-left">
+  <div class="row">
+    <div class="col-md-9">
+      <h1><%= @user.name %></h2>
+      <small class="font-italic">email: <%= @user.email %></small>
+      <h4>Created Events</h4>
+      <%= render 'shared/list_group', object: @user.created_events %>
+    </div>
+  </div>
+  <div class="row border-top pt-2">
+    <div class="col-md-9">
+      <h4>Attending Soon</h4>
+      <%= render 'shared/list_group', object: @user.attended_events.upcoming_events %>
+    </div>
+    <div class="col-md-3 border-left">
+      <h5>Attended</h5>
+      <%= render 'shared/list_group', object: @user.attended_events.upcoming_events %>
+    </div>
+  </div>
 </div>

@@ -1,0 +1,12 @@
+<% if object.any? %>
+  <ul class="list-group">
+    <% object.each do |e| %>
+      <a href="<%= event_path(e) %>"
+      class="list-group-item list-group-item-action">
+        <%= e.title %>
+      </a>
+    <% end %>
+  </ul>
+<% else %>
+  <em>(None)</em>
+<% end %>
