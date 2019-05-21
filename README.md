@@ -1,24 +1,37 @@
-# README
+# Private Events App
+PrivateEvents is a event management app developed using Ruby on Rails.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+_This project is a part of
+[the Odin Project](https://www.theodinproject.com)'s curriculum._
 
-Things you may want to cover:
+## Getting started
 
-* Ruby version
+To get started with the app, clone the repo and then install the needed gems:
 
-* System dependencies
+```
+$ bundle install --without production
+```
 
-* Configuration
+Next, migrate the database:
 
-* Database creation
+```
+$ rails db:migrate
+```
 
-* Database initialization
+If you want to load sample users and posts, use seeds:
 
-* How to run the test suite
+```
+$ rails db:seed
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+Finally, run the test suite to verify that everything is working correctly:
 
-* Deployment instructions
+```
+$ rails test
+```
 
-* ...
+If the test suite passes, you'll be ready to run the app in a local server:
+
+```
+$ rails server
+```
