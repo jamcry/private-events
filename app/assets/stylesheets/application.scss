@@ -26,3 +26,10 @@
   transform: scale(1.01);
   box-shadow: 0px 0.5px 10px rgb(190, 190, 190);
 }
+
+.field_with_errors {
+  color:red;
+  input, select {
+    border: 1px solid red;
+  }
+}

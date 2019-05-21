@@ -1,3 +1,4 @@
+<% if !logged_in? %>
 <div class="jumbotron p-2 text-left">
   <div class="row">
     <div class="col-md-9">
@@ -5,20 +6,17 @@
       <p>Choose an event to attend, or event create one to invite people.</p>
     </div>
     <div class="col-md-3 m-auto border-left">
-      <% if !logged_in? %>
+      
         <a href="<%= signup_path %>" class="btn btn-primary btn-lg">
           Signup
         </a>
         <a href="<%= login_path %>" class="btn btn-secondary btn-lg">
           Login
         </a>
-      <% else %>
-        Logged in, <%= link_to current_user.name, current_user %>
-      <% end %>
     </div>
   </div>
 </div>
-
+<% end %>
   <h1>Upcoming Events</h1>
   <div class="card-group">
   <%= render Event.upcoming_events.take(3) %>

@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def new
+    redirect_to root_url if logged_in?
     @user = User.new
   end
 
@@ -9,7 +10,7 @@ class UsersController < ApplicationController
       flash[:success] = "User created."
       redirect_to @user
     else
-      flash[:warning] = "Cannot create user."
+      flash.now[:danger] = "Cannot create user."
       render 'new'
     end
   end

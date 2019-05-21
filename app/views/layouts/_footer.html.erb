@@ -3,5 +3,6 @@
   <%= link_to "(home)", root_url%>
   <%= link_to "(back)", :back %>
   <%= link_to "(events)", events_url %>
+  <%= link_to "(logout)", logout_url, data: { confirm: "You are logging out!" }, class: "float-right" if logged_in? %>
 </footer>
 <!-- Footer -->

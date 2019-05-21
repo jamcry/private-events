@@ -13,4 +13,11 @@ module SessionsHelper
   def logout
     session[:user_id] = nil
   end
+
+  def require_login
+    if !logged_in?
+      flash[:warning] = "You should be logged in for this action!"
+      redirect_to root_url
+    end
+  end
 end
