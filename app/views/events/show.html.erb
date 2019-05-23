@@ -11,16 +11,18 @@
     <p><%= @event.date %></p>
   </div>
   <div class="col-md-3 border-left">
-    <p class="font-weight-bold mt-3 mb-1">Attendees</p>
+    <p class="font-weight-bold mt-3 mb-1">
+      Attendees <span class="badge badge-pill badge-success"><%= @event.attendees.size %></span>
+    </p>
     <% if @event.attendees.any? %>
       <ul>
       <% @event.attendees.take(10).each do |e| %>
         <li><%= e.name %></li>
       <% end %>
+      <% "..." if @event.attendees.size > 10 %>
       </ul>
     <% end %>
-    <a href="#" class="btn btn-primary btn-lg">Attend</a>
-
+    <%= render 'attend_status' %>
   </div>
   </div>
 </div>
