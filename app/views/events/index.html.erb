@@ -1,11 +1,11 @@
 <div class="jumbotron">
-  <h1>Upcoming Events</h1>
+  <%= will_paginate @events %>
+
+  <h1>All Events</h1>
   <div class="card-columns">
-    <%= render @events.upcoming_events %>
+    <%= render @events %>
   </div>
-  
-  <h1>Past Events</h1>
-  <div class="card-columns">
-    <%= render @events.previous_events %>
-  </div>
+
+  <%= will_paginate @events %>
+
 </div>
