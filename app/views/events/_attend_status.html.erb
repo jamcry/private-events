@@ -4,7 +4,7 @@
     <%= link_to "Signup", signup_path %> now
     to attend this event!
   </p>
-<% elsif @event.date < Time.now %>
+<% elsif @event.date.past? %>
   <p>This event is passed!</p>
 <% elsif @event.attendees.include? current_user %>
   <p>You're attending this event!</p>

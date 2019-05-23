@@ -1,4 +1,4 @@
-<div class="card event-card">
+<div class="card event-card <%= "event-card-past" if (event.date.past?)%>">
   <img class="card-img-top" src="https://picsum.photos/246/160?random=<%=event.id%>" alt="Event image">
   <div class="card-body">
     <h5 class="card-title"><%= event.title %></h5>
