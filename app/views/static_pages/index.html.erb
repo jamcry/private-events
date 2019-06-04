@@ -18,7 +18,19 @@
 </div>
 <% end %>
   <h1>Upcoming Events</h1>
-  <div class="card-group">
-  <%= render Event.upcoming_events.take(3) %>
-  </div>
+  
+  
+    <% if Event.upcoming_events.any? %>
+      <div class="card-group">
+        <%= render Event.upcoming_events.take(3) %>
+      </div>
+    <% elsif Event.previous_events.any? %>
+      <p>Could not find any new events this time. Here are some past events.</p>
+      <div class="card-group">
+        <%= render Event.previous_events.take(3) %>
+      </div>
+    <% else %>
+      <p>No events yet.</p>
+    <% end %>
+ 
 </div>
