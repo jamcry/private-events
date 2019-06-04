@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+User.delete_all
+Event.delete_all
 
 User.create!(name:"jamcry", email:"jamcry@hotmail.com",
              password:"foobar", password_confirmation:"foobar")
@@ -22,12 +24,14 @@ User.create!(name: "arthur", email:"arthur@42.com",
                password_confirmation: "foobar")
 end
 
-35.times do |n|
+
+user_id_range = ((User.first.id)..(User.last.id))
+50.times do |n|
   e = Event.create!(title: Faker::Book.title,
-                    creator: User.find(rand(1..15)),
+                    creator: User.find(rand(user_id_range)),
                     location: Faker::University.name,
-                    date: Faker::Time.between(10.days.ago, 10.days.from_now, :all))
-  rand(1..15).times {e.attendees << User.find(rand(1..15))}
+                    date: Faker::Time.between(10.days.ago, 40.days.from_now, :all))
+  rand(user_id_range).times {e.attendees << User.find(rand(user_id_range))}
 end
 
 
